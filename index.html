@@ -1,0 +1,367 @@
+<title>Политика обработки персональных данных — Режим Дня для Малыша</title>
+<style>
+  :root {
+    --bg: #f6f4ef;
+    --bg-raised: #ffffff;
+    --ink: #22252a;
+    --ink-soft: #55595f;
+    --ink-faint: #8a8e93;
+    --rule: #ddd8cd;
+    --accent: #3f6e5c;
+    --accent-soft: #e5ede9;
+    --accent-ink: #2c4f42;
+    --callout-bg: #efe9df;
+    --callout-rule: #c9a688;
+    --shadow: rgba(34, 37, 42, 0.06);
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #1c1e1c;
+      --bg-raised: #232622;
+      --ink: #ece9e2;
+      --ink-soft: #b6b2a8;
+      --ink-faint: #82817a;
+      --rule: #37392f;
+      --accent: #7bab97;
+      --accent-soft: #29352e;
+      --accent-ink: #a8cabc;
+      --callout-bg: #2a2823;
+      --callout-rule: #7a6248;
+      --shadow: rgba(0, 0, 0, 0.35);
+    }
+  }
+
+  :root[data-theme="dark"] {
+    --bg: #1c1e1c;
+    --bg-raised: #232622;
+    --ink: #ece9e2;
+    --ink-soft: #b6b2a8;
+    --ink-faint: #82817a;
+    --rule: #37392f;
+    --accent: #7bab97;
+    --accent-soft: #29352e;
+    --accent-ink: #a8cabc;
+    --callout-bg: #2a2823;
+    --callout-rule: #7a6248;
+    --shadow: rgba(0, 0, 0, 0.35);
+  }
+
+  :root[data-theme="light"] {
+    --bg: #f6f4ef;
+    --bg-raised: #ffffff;
+    --ink: #22252a;
+    --ink-soft: #55595f;
+    --ink-faint: #8a8e93;
+    --rule: #ddd8cd;
+    --accent: #3f6e5c;
+    --accent-soft: #e5ede9;
+    --accent-ink: #2c4f42;
+    --callout-bg: #efe9df;
+    --callout-rule: #c9a688;
+    --shadow: rgba(34, 37, 42, 0.06);
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: -apple-system, "Segoe UI", "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+    font-size: 16.5px;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .page {
+    max-width: 42rem;
+    margin: 0 auto;
+    padding: 4rem 1.5rem 6rem;
+  }
+
+  @media (max-width: 640px) {
+    .page { padding: 2.75rem 1.25rem 4rem; }
+  }
+
+  header.doc-head {
+    margin-bottom: 2.75rem;
+  }
+
+  .eyebrow {
+    display: inline-block;
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.11em;
+    text-transform: uppercase;
+    color: var(--accent-ink);
+    background: var(--accent-soft);
+    padding: 0.35em 0.75em;
+    border-radius: 3px;
+    margin-bottom: 1.1rem;
+  }
+
+  h1 {
+    font-family: Georgia, "Noto Serif", "Times New Roman", serif;
+    font-weight: 400;
+    font-size: 2.15rem;
+    line-height: 1.22;
+    letter-spacing: -0.01em;
+    margin: 0 0 0.6rem;
+    color: var(--ink);
+    text-wrap: balance;
+  }
+
+  .doc-sub {
+    font-size: 1rem;
+    color: var(--ink-soft);
+    margin: 0 0 1.4rem;
+    max-width: 34rem;
+  }
+
+  .meta-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem 1.25rem;
+    font-size: 0.85rem;
+    color: var(--ink-faint);
+    font-variant-numeric: tabular-nums;
+    border-top: 1px solid var(--rule);
+    padding-top: 0.9rem;
+  }
+
+  .meta-row strong { color: var(--ink-soft); font-weight: 600; }
+
+  nav.toc {
+    background: var(--bg-raised);
+    border: 1px solid var(--rule);
+    border-radius: 10px;
+    padding: 1.25rem 1.5rem;
+    margin: 2.25rem 0 3rem;
+    box-shadow: 0 1px 2px var(--shadow);
+  }
+
+  nav.toc h2 {
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    margin: 0 0 0.85rem;
+  }
+
+  nav.toc ol {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.45rem 1.5rem;
+  }
+
+  @media (max-width: 560px) {
+    nav.toc ol { grid-template-columns: 1fr; }
+  }
+
+  nav.toc a {
+    display: flex;
+    gap: 0.6em;
+    color: var(--ink-soft);
+    text-decoration: none;
+    font-size: 0.92rem;
+    padding: 0.15rem 0;
+    border-radius: 4px;
+  }
+
+  nav.toc a:hover,
+  nav.toc a:focus-visible { color: var(--accent-ink); }
+  nav.toc a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+  nav.toc .num {
+    color: var(--accent);
+    font-variant-numeric: tabular-nums;
+    font-weight: 600;
+    min-width: 1.1em;
+  }
+
+  section.clause {
+    padding: 1.9rem 0;
+    border-top: 1px solid var(--rule);
+    scroll-margin-top: 1.5rem;
+  }
+
+  section.clause:first-of-type { border-top: none; padding-top: 0; }
+
+  .clause-head {
+    display: flex;
+    align-items: baseline;
+    gap: 0.7rem;
+    margin: 0 0 0.75rem;
+  }
+
+  .clause-num {
+    font-family: Georgia, "Noto Serif", serif;
+    color: var(--accent);
+    font-size: 1.05rem;
+    font-variant-numeric: tabular-nums;
+    flex-shrink: 0;
+  }
+
+  h2 {
+    font-family: Georgia, "Noto Serif", "Times New Roman", serif;
+    font-weight: 400;
+    font-size: 1.28rem;
+    margin: 0;
+    color: var(--ink);
+    text-wrap: balance;
+  }
+
+  section.clause p { margin: 0 0 0.85rem; color: var(--ink-soft); max-width: 40rem; }
+  section.clause p:last-child { margin-bottom: 0; }
+
+  section.clause ul {
+    margin: 0 0 0.85rem;
+    padding-left: 1.2rem;
+    color: var(--ink-soft);
+  }
+  section.clause ul:last-child { margin-bottom: 0; }
+  section.clause li { margin-bottom: 0.45rem; }
+  section.clause li:last-child { margin-bottom: 0; }
+  section.clause li::marker { color: var(--accent); }
+
+  strong.tight { color: var(--ink); font-weight: 600; }
+
+  .callout {
+    background: var(--callout-bg);
+    border-left: 3px solid var(--callout-rule);
+    border-radius: 4px;
+    padding: 1.1rem 1.3rem;
+    margin-top: 2.5rem;
+    font-size: 0.9rem;
+    color: var(--ink-soft);
+    font-style: italic;
+    line-height: 1.6;
+  }
+
+  footer.doc-foot {
+    margin-top: 3rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--rule);
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    font-size: 0.85rem;
+    color: var(--ink-faint);
+  }
+
+  @media print {
+    body { background: #fff; color: #000; }
+    nav.toc { display: none; }
+  }
+</style>
+
+<div class="page">
+  <header class="doc-head">
+    <span class="eyebrow">Политика обработки персональных данных</span>
+    <h1>Режим Дня для Малыша</h1>
+    <p class="doc-sub">
+      Что собирает и как использует Telegram-бот
+      <strong class="tight">@BabysdailyRoutine_bot</strong>, который помогает выстраивать
+      и отслеживать режим дня ребёнка.
+    </p>
+    <div class="meta-row">
+      <span>Обновлено: <strong>05.08.2026</strong></span>
+      <span>Разделов: <strong>9</strong></span>
+      <span>Язык: <strong>русский</strong></span>
+    </div>
+  </header>
+
+  <nav class="toc" aria-label="Оглавление">
+    <h2>Оглавление</h2>
+    <ol>
+      <li><a href="#s1"><span class="num">1</span> Какие данные собираются</a></li>
+      <li><a href="#s2"><span class="num">2</span> Зачем это нужно</a></li>
+      <li><a href="#s3"><span class="num">3</span> Где и как хранятся</a></li>
+      <li><a href="#s4"><span class="num">4</span> Третьи лица</a></li>
+      <li><a href="#s5"><span class="num">5</span> Сроки хранения</a></li>
+      <li><a href="#s6"><span class="num">6</span> Ваши права</a></li>
+      <li><a href="#s7"><span class="num">7</span> Дети</a></li>
+      <li><a href="#s8"><span class="num">8</span> Изменения политики</a></li>
+      <li><a href="#s9"><span class="num">9</span> Контакты</a></li>
+    </ol>
+  </nav>
+
+  <main>
+    <section class="clause" id="s1">
+      <div class="clause-head"><span class="clause-num">01</span><h2>Какие данные собираются</h2></div>
+      <ul>
+        <li><strong class="tight">Telegram ID</strong> — технический идентификатор аккаунта в Telegram (не номер телефона и не логин).</li>
+        <li><strong class="tight">Имя и дата рождения ребёнка</strong> — то, что вы сами вводите при настройке профиля.</li>
+        <li><strong class="tight">Часовой пояс</strong> — определяется по присланной геопозиции (координаты используются только для расчёта и нигде не сохраняются) либо задаётся по умолчанию или вручную.</li>
+        <li><strong class="tight">События режима дня</strong> — время и тип того, что вы отмечаете кнопками или командами: сон, кормление, купание и т.д.</li>
+        <li><strong class="tight">Текст сообщений</strong>, которые вы присылаете через «💬 Отзыв и баги».</li>
+      </ul>
+      <p>Мы <strong class="tight">не запрашиваем и не храним</strong>: номер телефона, email, платёжные данные, документы, фотографии, точные координаты геопозиции.</p>
+    </section>
+
+    <section class="clause" id="s2">
+      <div class="clause-head"><span class="clause-num">02</span><h2>Зачем это нужно</h2></div>
+      <ul>
+        <li>Присылать напоминания о режиме дня в нужное время с учётом вашего часового пояса.</li>
+        <li>Показывать статистику сна и кормлений — за день и за неделю.</li>
+        <li>Подбирать и адаптировать распорядок под возраст ребёнка.</li>
+        <li>Отвечать на отзывы, чинить ошибки, присылать сводку раз в неделю.</li>
+      </ul>
+    </section>
+
+    <section class="clause" id="s3">
+      <div class="clause-head"><span class="clause-num">03</span><h2>Где и как хранятся данные</h2></div>
+      <p>Данные хранятся в базе данных на сервере, который мы администрируем сами. Ежедневно делаются резервные копии, которые хранятся 14&nbsp;дней. Доступ к серверу и базе данных ограничен.</p>
+    </section>
+
+    <section class="clause" id="s4">
+      <div class="clause-head"><span class="clause-num">04</span><h2>Передача третьим лицам</h2></div>
+      <p>Мы не продаём и не передаём ваши данные третьим лицам в рекламных или иных коммерческих целях. Технически сообщения проходят через инфраструктуру Telegram (как у любого Telegram-бота), а сами данные — через сервер хостинг-провайдера, на котором развёрнут бот.</p>
+    </section>
+
+    <section class="clause" id="s5">
+      <div class="clause-head"><span class="clause-num">05</span><h2>Сроки хранения</h2></div>
+      <p>Данные хранятся, пока у вас есть активный профиль в боте. Резервные копии базы данных хранятся 14&nbsp;дней и затем автоматически удаляются.</p>
+    </section>
+
+    <section class="clause" id="s6">
+      <div class="clause-head"><span class="clause-num">06</span><h2>Ваши права</h2></div>
+      <p>Вы можете в любой момент:</p>
+      <ul>
+        <li>Изменить имя, дату рождения ребёнка и часовой пояс — в разделе «⚙️ Настройки» самого бота.</li>
+        <li>Отключить напоминания — там же, в «⚙️ Настройки».</li>
+        <li><strong class="tight">Запросить полное удаление своих данных</strong> — напишите об этом через «💬 Отзыв и баги» в боте; мы удалим профиль, историю событий и отзывы в разумный срок.</li>
+      </ul>
+    </section>
+
+    <section class="clause" id="s7">
+      <div class="clause-head"><span class="clause-num">07</span><h2>Дети</h2></div>
+      <p>Бот собирает данные о ребёнке (имя, дата рождения, события режима дня), которые вводит родитель или законный представитель. Сам ребёнок ботом не пользуется и не взаимодействует с ним.</p>
+    </section>
+
+    <section class="clause" id="s8">
+      <div class="clause-head"><span class="clause-num">08</span><h2>Изменения политики</h2></div>
+      <p>Мы можем обновлять этот документ по мере развития бота. Дата последнего обновления указана в начале документа; о существенных изменениях сообщим в самом боте.</p>
+    </section>
+
+    <section class="clause" id="s9">
+      <div class="clause-head"><span class="clause-num">09</span><h2>Контакты</h2></div>
+      <p>По любым вопросам об обработке данных — через «💬 Отзыв и баги» в боте.</p>
+    </section>
+
+    <p class="callout">
+      Документ описывает данные, которые бот действительно собирает и хранит на момент публикации, и составлен на основе разбора его исходного кода. Он не заменяет юридическую консультацию — перед масштабной рекламной кампанией и работой с персональными данными на территории РФ рекомендуем проверить документ у юриста, в том числе на предмет обязанностей оператора персональных данных по 152-ФЗ.
+    </p>
+  </main>
+
+  <footer class="doc-foot">
+    <span>Режим Дня для Малыша · @BabysdailyRoutine_bot</span>
+    <span>Версия документа от 05.08.2026</span>
+  </footer>
+</div>
